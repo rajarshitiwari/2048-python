@@ -1,4 +1,4 @@
-#!/usr/bin/python
+#!/usr/bin/python3
 
 # READ 1
 ##################################################################
@@ -139,11 +139,11 @@ def main():
 	cellx = 12;celly=6
 	ncell = 4
 	
-	curr_arr = numpy.zeros((ncell,ncell),dtype=int)
-	prev_arr = numpy.zeros((ncell,ncell),dtype=int)
+	curr_arr = numpy.zeros((ncell, ncell), dtype=int)
+	prev_arr = numpy.zeros((ncell, ncell), dtype=int)
 
-	r1 = random.randint(0,ncell-1)
-	r2 = random.randint(0,ncell-1)
+	r1 = random.randint(0, ncell-1)
+	r2 = random.randint(0, ncell-1)
 
 	curr_arr[r1,r2] = 2
 	prev_arr[r1,r2] = 2
@@ -161,20 +161,20 @@ def main():
 			for i in range(0,13):
 				if (term == color_arr[i]):
 					if (i < 6):
-						screen.addstr(y1+celly/2 - 1, x1+cellx/2 - 2 - lnch/2, str(term),curses.color_pair(i+1))
+						screen.addstr(y1+celly//2 - 1, x1+cellx//2 - 2 - lnch//2, str(term),curses.color_pair(i+1))
 						cl_print = 1
 					elif (i >= 6):
-						screen.addstr(y1+celly/2 - 1, x1+cellx/2 - 2 - lnch/2, str(term),curses.color_pair(i-5)+curses.A_BOLD)
+						screen.addstr(y1+celly//2 - 1, x1+cellx//2 - 2 - lnch//2, str(term),curses.color_pair(i-5)+curses.A_BOLD)
 						cl_print = 1
 					#
 				#
 				if (cl_print == 0):
 					if (term == 0):
 						#screen.addstr(y1+celly/2 - 1, x1+cellx/2 - 2, str(term),curses.color_pair(0))
-						screen.addstr(y1+celly/2 - 1, x1+cellx/2 - 2 - lnch/2, ' ')
+						screen.addstr(y1+celly//2 - 1, x1+cellx//2 - 2 - lnch//2, ' ')
 						#continue
 					else:
-						screen.addstr(y1+celly/2 - 1, x1+cellx/2 - 2 - lnch/2, str(term),curses.color_pair(0)+curses.A_BOLD)
+						screen.addstr(y1+celly//2 - 1, x1+cellx//2 - 2 - lnch//2, str(term),curses.color_pair(0)+curses.A_BOLD)
 					#
 				#
 			#
@@ -265,7 +265,7 @@ def main():
 				x2=x0+(i2+1)*cellx-2
 				y1=y0+i1*celly+1
 				y2=y0+(i1+1)*celly-1
-				screen.addstr(y1+celly/2 - 1, x1+cellx/2 - 2, (cellx)*" ")
+				screen.addstr(y1+celly//2 - 1, x1+cellx//2 - 2, (cellx)*" ")
 				#screen.addstr(y1+celly/2 - 1, x1+cellx/2 - 2, str(term))
 				rectangle(screen, y1 ,x1 ,y2 ,x2 )
 				screen.refresh()
@@ -278,12 +278,12 @@ def main():
 				for i in range(0,13):
 					if (term == color_arr[i]):
 						if (i < 6):
-							screen.addstr(y1+celly/2 - 1, x1+cellx/2 - 2 - maxln/2, (maxln+1)*' ')
-							screen.addstr(y1+celly/2 - 1, x1+cellx/2 - 2 - lnch/2, str(term),curses.color_pair(i+1))
+							screen.addstr(y1+celly//2 - 1, x1+cellx//2 - 2 - maxln//2, (maxln+1)*' ')
+							screen.addstr(y1+celly//2 - 1, x1+cellx//2 - 2 - lnch//2, str(term),curses.color_pair(i+1))
 							cl_print = 1
 						elif (i >= 6):
-							screen.addstr(y1+celly/2 - 1, x1+cellx/2 - 2 - maxln/2, (maxln+1)*' ')
-							screen.addstr(y1+celly/2 - 1, x1+cellx/2 - 2 - lnch/2, str(term),curses.color_pair(i-5)+curses.A_BOLD)
+							screen.addstr(y1+celly//2 - 1, x1+cellx//2 - 2 - maxln//2, (maxln+1)*' ')
+							screen.addstr(y1+celly//2 - 1, x1+cellx//2 - 2 - lnch//2, str(term),curses.color_pair(i-5)+curses.A_BOLD)
 							cl_print = 1
 						#
 					#
@@ -291,9 +291,9 @@ def main():
 						if (term == 0):
 							#screen.addstr(y1+celly/2 - 1, x1+cellx/2 - 2, str(term),curses.color_pair(0))
 							#screen.addstr(y1+celly/2 - 1, x1+cellx/2 - 2 - lnch/2, ' ')
-							screen.addstr(y1+celly/2 - 1, x1+cellx/2 - 2 - maxln/2, (maxln+1)*' ')
+							screen.addstr(y1+celly//2 - 1, x1+cellx//2 - 2 - maxln//2, (maxln+1)*' ')
 						else:
-							screen.addstr(y1+celly/2 - 1, x1+cellx/2 - 2 - lnch/2, str(term),curses.color_pair(0)+curses.A_BOLD)
+							screen.addstr(y1+celly//2 - 1, x1+cellx//2 - 2 - lnch//2, str(term),curses.color_pair(0)+curses.A_BOLD)
 						#
 					#
 				screen.refresh()
@@ -304,9 +304,9 @@ def main():
 		screen.refresh()
 	#
 	curses.endwin()
-	print "number of moves = ",game_count
-	print "game score      = ",game_score
-	print "thank you for playing!"
+	print("number of moves = ", game_count)
+	print("game score      = ", game_score)
+	print("thank you for playing!")
 	
 #
 
